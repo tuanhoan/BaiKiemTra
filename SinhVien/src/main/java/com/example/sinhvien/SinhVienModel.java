@@ -1,8 +1,9 @@
 package com.example.sinhvien;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class SinhVienModel {
+public class SinhVienModel implements Serializable {
     public  String MSSV;
     public String Ten;
     public  String SoDienThoai;
@@ -10,11 +11,10 @@ public class SinhVienModel {
     public  Date NgayHetHan;
     public  String MaThe;
     public  String DonVi;
+    public String ImagePath;
+    public  int Pic;
 
-    public SinhVienModel() {
-    }
-
-    public SinhVienModel(String MSSV, String ten, String soDienThoai, Date ngayCap, Date ngayHetHan, String maThe, String donVi) {
+    public SinhVienModel(String MSSV, String ten, String soDienThoai, Date ngayCap, Date ngayHetHan, String maThe, String donVi, String imagePath, int pic) {
         this.MSSV = MSSV;
         Ten = ten;
         SoDienThoai = soDienThoai;
@@ -22,6 +22,22 @@ public class SinhVienModel {
         NgayHetHan = ngayHetHan;
         MaThe = maThe;
         DonVi = donVi;
+        ImagePath = imagePath;
+        Pic = pic;
+    }
+
+    public SinhVienModel() {
+    }
+
+    public SinhVienModel(String MSSV, String ten, String soDienThoai, Date ngayCap, Date ngayHetHan, String maThe, String donVi, String imagePath) {
+        this.MSSV = MSSV;
+        Ten = ten;
+        SoDienThoai = soDienThoai;
+        NgayCap = ngayCap;
+        NgayHetHan = ngayHetHan;
+        MaThe = maThe;
+        DonVi = donVi;
+        ImagePath = imagePath;
     }
 
     public String getMSSV() {
@@ -80,12 +96,24 @@ public class SinhVienModel {
         DonVi = donVi;
     }
 
+    public String getImagePath() {
+        return ImagePath;
+    }
+
+    public int getPic() {
+        return Pic;
+    }
+
+    public void setPic(int pic) {
+        Pic = pic;
+    }
+
+    public void setImagePath(String imagePath) {
+        ImagePath = imagePath;
+    }
+
     @Override
     public String toString() {
-        return "SinhVienModel{" +
-                "MSSV='" + MSSV + '\'' +
-                ", Ten='" + Ten + '\'' +
-                ", SoDienThoai='" + SoDienThoai + '\'' +
-                '}';
+        return Ten ;
     }
 }
